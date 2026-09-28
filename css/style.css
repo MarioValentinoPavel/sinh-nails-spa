@@ -1,0 +1,80 @@
+/* Sinh Nails Spa — configurador de uñas: blanco lechoso y laca */
+:root{
+  --milk:#fbf8f6;
+  --milk2:#f1ebe7;
+  --lacquer:#e8433d;
+  --ink:#1b1b1f;
+  --mute:#7b7472;
+  --f-disp:'Dela Gothic One',system-ui,sans-serif;
+  --f-sans:'Be Vietnam Pro',system-ui,sans-serif;
+  --pad:clamp(18px,4vw,64px);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--milk);color:var(--ink);font-family:var(--f-sans);font-size:clamp(15px,1vw,17px);line-height:1.6;overflow-x:hidden}
+main{overflow-x:clip}
+a{color:inherit}
+img{display:block;max-width:100%}
+.kicker{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--lacquer)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:1em 1.7em;border-radius:100px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;transition:transform .4s var(--ease),background .4s}
+.btn:hover{transform:translateY(-3px);background:var(--lacquer)}
+.btn--ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn--ghost:hover{color:#fff}
+
+.nav{position:fixed;inset:0 0 auto;z-index:40;display:flex;align-items:center;gap:1rem;padding:.8rem var(--pad);background:rgba(251,248,246,.85);backdrop-filter:blur(10px)}
+.nav__logo{display:flex;align-items:center;gap:.6rem;font-weight:700;text-decoration:none;margin-right:auto}
+.nav__logo img{width:36px;height:36px;border-radius:50%;object-fit:cover}
+.nav__walk{font-size:.85rem;color:var(--mute)}
+.nav__cta{padding:.5em 1.1em;border-radius:100px;background:var(--lacquer);color:#fff;text-decoration:none;font-weight:600}
+
+/* ---------- app ---------- */
+.app{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);min-height:100vh;min-height:100svh;padding-top:62px}
+.app__preview{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 2rem;background:radial-gradient(circle at 50% 45%,#fff,var(--milk2) 70%);overflow:hidden}
+.drip{position:absolute;left:0;right:0;top:0;height:120px}
+.drip svg{width:100%;height:100%}
+.app__hello{position:relative;font-family:var(--f-disp);font-size:clamp(1rem,1.8vw,1.4rem);color:#fff;margin-bottom:auto;text-shadow:0 2px 0 rgba(0,0,0,.08)}
+#hand{width:min(100%,440px);height:auto;filter:drop-shadow(0 30px 40px rgba(27,27,31,.18))}
+.app__summary{margin-top:auto;padding:.5rem 1rem;border-radius:100px;background:#fff;font-size:.85rem;font-weight:500;box-shadow:0 6px 20px -10px rgba(0,0,0,.2)}
+.app__panel{padding:clamp(24px,4vw,56px);display:flex;flex-direction:column;gap:1.3rem;justify-content:center}
+.app__panel h1{font-family:var(--f-disp);font-weight:400;font-size:clamp(2.2rem,4.4vw,3.8rem);line-height:1}
+.app__panel h1 span{color:var(--lacquer)}
+.ctl__t{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--mute);margin-bottom:.5rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chips button{padding:.55em 1em;border-radius:100px;border:1.5px solid #d9d1cc;background:#fff;font:500 .88rem var(--f-sans);cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .25s}
+.chips button:hover{transform:translateY(-2px);border-color:var(--ink)}
+.chips button.is-on{background:var(--ink);border-color:var(--ink);color:#fff}
+.swatches{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:.4rem;max-width:520px}
+.swatches button{aspect-ratio:.62;border-radius:40% 40% 12px 12px;border:2px solid transparent;cursor:pointer;box-shadow:inset -3px 0 6px rgba(0,0,0,.18),inset 3px 0 4px rgba(255,255,255,.35);transition:transform .25s var(--ease),border-color .25s}
+.swatches button:hover{transform:translateY(-4px)}
+.swatches button.is-on{border-color:var(--ink);transform:translateY(-4px)}
+.app__note{font-size:.85rem;color:var(--mute);max-width:26rem}
+
+/* ---------- inspiración ---------- */
+.insp{padding:clamp(80px,12vw,150px) var(--pad)}
+.head{text-align:center;margin-bottom:2.4rem}
+.head h2,.visit h2{font-family:var(--f-disp);font-weight:400;font-size:clamp(2rem,4.6vw,3.8rem);line-height:1.05;margin-top:.5rem}
+.head__sub{color:var(--mute);margin-top:.5rem}
+.insp__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.insp__grid img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px;transition:transform .6s var(--ease)}
+.insp__grid img:hover{transform:scale(1.04) rotate(-1deg)}
+.insp__grid img:nth-child(4n+2){margin-top:2rem}
+.rev{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;padding:0 var(--pad) clamp(80px,12vw,140px)}
+.rev blockquote{padding:1.6rem;border-radius:22px;background:#fff;font-weight:500;box-shadow:0 20px 40px -30px rgba(0,0,0,.3)}
+.rev blockquote:first-child{background:var(--lacquer);color:#fff}
+cite{display:block;margin-top:.8rem;font-style:normal;font-size:.82rem;font-weight:700;opacity:.8}
+.visit{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:2rem;padding:0 var(--pad) clamp(70px,10vw,120px)}
+.visit h2 small{display:block;font-family:var(--f-sans);font-size:.4em;font-weight:500;color:var(--mute);margin-top:.5rem}
+.visit__h{margin-top:.8rem;font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:.6rem}
+.foot{padding:1.6rem;text-align:center;color:var(--mute);font-size:.85rem}
+
+@media (max-width:900px){
+  .nav__walk{display:none}
+  .app{grid-template-columns:minmax(0,1fr)}
+  .app__preview{min-height:66vh}
+  .swatches{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .insp__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rev{grid-template-columns:minmax(0,1fr)}
+  .app__hello{align-self:center;margin-top:78px;padding:.35em 1em;border-radius:100px;background:#1b1b1f;font-size:.95rem;text-shadow:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
